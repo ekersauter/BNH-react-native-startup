@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { AppRegistry, StyleSheet, Image, FlatList, View, Text, Button, ScrollView } from 'react-native';
 import { StackNavigator } from 'react-navigation'; // 1.0.0-beta.27
+import AwesomeButton from 'react-native-really-awesome-button';
+
 
 class AlignItemsBasics extends React.Component {
 
@@ -13,6 +15,16 @@ class AlignItemsBasics extends React.Component {
     let picBg = {
       uri: 'http://www.brandnewhealth.com/uploads/7/9/1/3/79132130/background-images/273746054.png'
     };
+
+    let flexPic1 = {
+      uri: 'http://www.brandnewhealth.com/uploads/7/9/1/3/79132130/wph_3.png'
+    }
+    let flexPic2 = {
+      uri: 'http://www.brandnewhealth.com/uploads/7/9/1/3/79132130/poph_3.png'
+    }
+    let flexPic3 = {
+      uri: 'http://www.brandnewhealth.com/uploads/7/9/1/3/79132130/cc_4.png'
+    }
 
     return (
     <ScrollView>
@@ -28,6 +40,17 @@ class AlignItemsBasics extends React.Component {
             <Text style={styles.normalTextWhite}>new</Text>
             <Text style={styles.normalTextNext}>insights</Text>
           </View>
+          <View style={{
+            padding: 12,
+            flex: 1, 
+            flexDirection: 'row', 
+            justifyContent: 'space-between',
+            alignItems: 'center'
+          }}>
+          <Image source={flexPic1} style={{width: '30%', height: 80}}/>
+          <Image source={flexPic2} style={{width: '30%', height: 80}}/>
+          <Image source={flexPic3} style={{width: '30%', height: 80}}/>
+          </View>
           <View>
             <Text style={styles.textHeader}>Vitaly - ichange3 columnist - {"\n"} on the trends for 2018</Text>
           </View>
@@ -40,20 +63,24 @@ class AlignItemsBasics extends React.Component {
           </Text>
           </View>
           <View  style={{ justifyContent: 'center', alignItems: 'center', }}>
-            <View style={styles.button}>
-              <Button
-                onPress={() => this.props.navigation.navigate('Details1')}
-                title="Fruit-mantra"
-                color="white"
-              />
-            </View>
+            {/*
+              To ease up the button props cross platform:
+              yarn add react-native-really-awesome-button
+              For more information see: 
+              https://www.npmjs.com/package/react-native-really-awesome-button
+            */}            
+            <AwesomeButton onPress={() => this.props.navigation.navigate('Details1')}
+            height={40}
+            borderRadius={20}
+            >
+              Fruit-mantra
+            </AwesomeButton>
           </View>
           <View  style={{ justifyContent: 'center', alignItems: 'center', }}>
             <View style={styles.button}>
               <Button
               onPress={() => this.props.navigation.navigate('Details2')}
                 title="Microbreaks"
-                color="white"
               />
             </View>
           </View>
@@ -62,7 +89,6 @@ class AlignItemsBasics extends React.Component {
               <Button
               onPress={() => this.props.navigation.navigate('Details3')}
                 title="Hopping"
-                color="white"
               />
             </View>
           </View>
@@ -193,10 +219,10 @@ const styles = StyleSheet.create({
     },
     normalTextNext: {
       color: 'white',
-      fontSize: 60,
+      fontSize: 40,
       marginLeft: '40%',
       marginTop: -20,
-      fontFamily: 'Baskerville',
+     // fontFamily: 'vincHand',
       // height:40,
     },
 
@@ -205,7 +231,7 @@ const styles = StyleSheet.create({
       fontSize: 26,
       marginLeft: 20,
       marginTop: 10,
-      fontFamily: 'Baskerville',
+     // fontFamily: 'vincHand',
       // height:40,
     },
 
@@ -218,6 +244,7 @@ const styles = StyleSheet.create({
       borderRadius: 20,
       marginLeft:20,
       marginRight:20,
+      color:'#ffffff'
     },
 });
 
