@@ -1,255 +1,147 @@
-import React, { Component } from 'react';
-import { AppRegistry, StyleSheet, Image, FlatList, View, Text, Button, ScrollView } from 'react-native';
-import { StackNavigator } from 'react-navigation'; // 1.0.0-beta.27
-import AwesomeButton from 'react-native-really-awesome-button';
+//Loading components dynamic https://gist.github.com/davidgljay/5d7a29c5add8b360b93db838235e80a8
 
+import React from 'react';
+import { DangerZone } from 'expo';
+import { Pedometer } from "expo";
 
-class AlignItemsBasics extends React.Component {
+import utilities from './src/functions/utils'
 
-  render() {
+import globalSetup from './src/data/globalSetup.json'
+import { StyleSheet, Text, View, Image } from 'react-native';
+import Menu, { MenuProvider, MenuOptions, MenuOption, MenuTrigger, renderers } from 'react-native-popup-menu';
+import { Scene, Router, Actions, Reducer, ActionConst } from 'react-native-router-flux';
 
-    let picHeader = {
-      uri: 'http://www.brandnewhealth.com/uploads/7/9/1/3/79132130/1468490553.png'
-    };
+// import startUp from './src/functions/startup'
+import HomePageScreen from './src/screens/home'
+import userLanguage from './src/tools/language'
+import register from './src/screens/register'
+import registered from './src/screens/registered'
+import hraQuestions from './src/screens/hra'
+// import testStore from './src/screens/testStore'
+// import sandbox from './src/screens/sandbox'
+// import checkBoxText from './src/components/checkBoxTest'
+import mLab from './src/data/backend'
 
-    let picBg = {
-      uri: 'http://www.brandnewhealth.com/uploads/7/9/1/3/79132130/background-images/273746054.png'
-    };
+import SimpleButton from './src/tools/SimpleButton'
+import dashboard from './src/screens/dashboard'
+import pedometer from './src/screens/pedometer'
+import storeBrowser from './src/screens/storeBrowser'
+import BarChartHorizontalWithLabels from './src/screens/barChart'
+import dashBoardVars from './src/screens/dashBoardPrep'
+import StepsDashBoard from './src/screens/stepsDashboard'
+import dashBoardHra from './src/screens/dashboardHra'
 
-    let flexPic1 = {
-      uri: 'http://www.brandnewhealth.com/uploads/7/9/1/3/79132130/wph_3.png'
-    }
-    let flexPic2 = {
-      uri: 'http://www.brandnewhealth.com/uploads/7/9/1/3/79132130/poph_3.png'
-    }
-    let flexPic3 = {
-      uri: 'http://www.brandnewhealth.com/uploads/7/9/1/3/79132130/cc_4.png'
-    }
+const globalLanguageSetting = globalSetup[0]['globalSetupLanguage']
 
-    return (
-    <ScrollView>
-
-      <View style={{flex: 1}}>
-          <View style={{width: '100%', height: 80, backgroundColor: '#26779e', paddingTop: 10}}>
-            <Image source={picHeader} style={{width: 200, height: 22, marginLeft: 20, marginTop: 20,}}/>
-          </View>
-          <View>
-            <Image source={picBg} style={{width: '100%', height: 120}}/>
-          </View>
-          <View>
-            <Text style={styles.normalTextWhite}>new</Text>
-            <Text style={styles.normalTextNext}>insights</Text>
-          </View>
-          <View style={{
-            padding: 12,
-            flex: 1, 
-            flexDirection: 'row', 
-            justifyContent: 'space-between',
-            alignItems: 'center'
-          }}>
-          <Image source={flexPic1} style={{width: '30%', height: 80}}/>
-          <Image source={flexPic2} style={{width: '30%', height: 80}}/>
-          <Image source={flexPic3} style={{width: '30%', height: 80}}/>
-          </View>
-          <View>
-            <Text style={styles.textHeader}>Vitaly - ichange3 columnist - {"\n"} on the trends for 2018</Text>
-          </View>
-          <View>
-          <Text style={styles.normalText}>
-            The Shout blog of our vitality app is Vitaly''s natural domain.
-            He always has a surprising take on health or vitality. Here''s his view on the trends for 2018.
-            {"\n"} {"\n"}
-            Three days into the new year, so it''s about time I share the three crucial vitality trends for 2018 with you.
-          </Text>
-          </View>
-          <View  style={{ justifyContent: 'center', alignItems: 'center', }}>
-            {/*
-              To ease up the button props cross platform:
-              yarn add react-native-really-awesome-button
-              For more information see: 
-              https://www.npmjs.com/package/react-native-really-awesome-button
-            */}            
-            <AwesomeButton onPress={() => this.props.navigation.navigate('Details1')}
-            height={40}
-            borderRadius={20}
-            >
-              Fruit-mantra
-            </AwesomeButton>
-          </View>
-          <View  style={{ justifyContent: 'center', alignItems: 'center', }}>
-            <View style={styles.button}>
-              <Button
-              onPress={() => this.props.navigation.navigate('Details2')}
-                title="Microbreaks"
-              />
-            </View>
-          </View>
-          <View  style={{ justifyContent: 'center', alignItems: 'center', }}>
-            <View style={styles.button}>
-              <Button
-              onPress={() => this.props.navigation.navigate('Details3')}
-                title="Hopping"
-              />
-            </View>
-          </View>
-      </View>
-    </ScrollView>
-
-    );
-  }
-};
-
-
-class DetailsScreen1 extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'flex-start' }}>
-        <Text style={styles.normalText}>
-        1. For a long time, the fruit-mantra has been: three pieces a day. But because we live in a visual culture and increasingly capture our performances with photos and selfies, this simple adage is no longer enough.
-        {"\n"}{"\n"}
-          In 2018 your fruit will also have to look nice, and especially: it will have to fit together. An aesthetic inspection committee will assess your photo compositions in real time. Because: a banana, kiwi and khaki combined? It is a challenge to make something of that! And I''m not even talking about taste here. So scoring on social media and highlighting your vitality is now done with compatible fruits.
-        </Text>
-      </View>
-    );
-  }
-}
-
-class DetailsScreen2 extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'flex-start' }}>
-        <Text style={styles.normalText}>
-        2. Microbreaks - powernaps - standing meetings - walking meetings....
-        it''s all becoming common practice, but the end has not yet been reached.
-        {"\n"}{"\n"}
-        The trend for 2018 is: short naps during meetings, for those agenda
-        items where your contribution is not needed. Staring at the ceiling
-        purposelessly, playing with the sugar packets on the table or doodling:
-        all things of the past. Relentless and super-efficient power napping
-        is now on the agenda. Where you would have been ridiculed 5 years ago,
-        you will now reap awe and praise!{"\n"}{"\n"}
-        For an extra dramatic touch, add a collective sleep moment to the
-        misc. on the agenda! That''s guaranteed to be a glorious, energetic
-        finale to a successful meeting and your very own 15 minutes of fame!
-        </Text>
-      </View>
-    );
-  }
-}
-
-class DetailsScreen3 extends React.Component {
-  render() {
-    return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'flex-start' }}>
-        <Text style={styles.normalText}>
-        {"3. Finally, 'sitting is new smoking, 'standing too long is new sitting .... "}
-        {"\n"}{"\n"}
-        {"It simply doesn't stop. So what's the solution then? In 2018, hopping to work and at work is the real deal. "}
-        {"\n"}{"\n"}
-        {"Become a trendsetter and a trend hopper all at once!"}
-        </Text>
-        <Image
-          source={{uri: 'http://www.brandnewhealth.com/uploads/7/9/1/3/79132130/nieuwsbrief-december-afb_1.png'}}
-          style={{width:'100%', height:80, marginTop:100}}/>
-      </View>
-    );
-  }
-}
-
-const RootStack = StackNavigator(
-  {
-    Home: {
-      screen: AlignItemsBasics,
-    },
-    Details1: {
-      screen: DetailsScreen1,
-    },
-    Details2: {
-      screen: DetailsScreen2,
-    },
-    Details3: {
-      screen: DetailsScreen3,
-    },
+// Check steps
+Pedometer.isAvailableAsync().then(
+  result => {
+    console.log('STEPS: ', result)
   },
-  {
-    initialRouteName: 'Home',
+  error => {
+    this.setState({
+      isPedometerAvailable: "Could not get isPedometerAvailable: " + error
+    });
   }
 );
 
-const styles = StyleSheet.create({
+const menu_logo = require('./src/images/menu_logo.png');
+const hamburger = require('./src/images/menu.png');
+const { ContextMenu } = renderers;
 
-  container: {
-   paddingTop: 10,
-  },
-  item: {
-    padding: 10,
-    fontSize: 13,
-  },
-  row: {
-        flexDirection: 'row',
-        alignItems: 'flex-start',
-        flexWrap: 'wrap',
-        flex: 1
-    },
-    bullet: {
-        width: 10,
-        marginLeft:20,
-    },
-    bulletText: {
-        flex: 1,
-        paddingBottom: 10,
-    },
-    boldText: {
-        fontWeight: 'bold'
-    },
-    normalText: {
-      color: 'darkslategrey',
-      fontSize: 14,
-      marginLeft: 20,
-      marginRight: 20,
-      marginTop: 20,
-
-    },
-    normalTextWhite: {
-      color: 'white',
-      fontSize: 40,
-      marginLeft: '40%',
-      marginTop: -110,
-      // height:40,
-    },
-    normalTextNext: {
-      color: 'white',
-      fontSize: 40,
-      marginLeft: '40%',
-      marginTop: -20,
-     // fontFamily: 'vincHand',
-      // height:40,
-    },
-
-    textHeader: {
-      color: '#26779e',
-      fontSize: 26,
-      marginLeft: 20,
-      marginTop: 10,
-     // fontFamily: 'vincHand',
-      // height:40,
-    },
-
-    button: {
-      marginTop:20,
-      width: '70%',
-      height: 40,
-      backgroundColor: '#26779e',
-      paddingTop: 0,
-      borderRadius: 20,
-      marginLeft:20,
-      marginRight:20,
-      color:'#ffffff'
-    },
-});
-
-export default class App extends React.Component {
-  render() {
-    return <RootStack />;
+const reducerCreate = params => {
+  const defaultReducer = Reducer(params);
+  return (state, action)=>{
+      // console.log("ACTION:", action);
+      return defaultReducer(state, action);
   }
 }
+
+const refreshOnBack = () => { Actions.pop(); Actions.refresh('homeKey'); console.log('refreshOnBack is called!')}
+
+const NavigatorMenu = () => (
+  <Menu style={ styles.navigatormenu } renderer={renderers.Popover} >
+    <MenuTrigger>
+            <Image
+              style={ styles.hamburger }
+              resizeMode='contain'
+              source={ hamburger }>
+            </Image>
+      </MenuTrigger>
+    <MenuOptions customStyles={{optionText: styles.menuoptiontext}}>
+      <Image source={menu_logo} style={{ width: 150, height: 150 }}/>
+
+      <MenuOption onSelect={() => Actions.refresh({ key: 'homeKey'})} text='Start'/>
+      <MenuOption onSelect={() => Actions.userLanguageKey() } text='Set language'/>
+      <MenuOption onSelect={() => Actions.registerKey() } text='Start registratie'/>
+      <MenuOption onSelect={() => Actions.hraQuestionsKey()} text='Start uw profiel' />
+      {/* <MenuOption onSelect={() => Actions.testStoreKey()} text='testStore' /> */}
+      <MenuOption onSelect={() => Actions.dashBoardVarsKey()} text='dashboard' />
+      {/* <MenuOption onSelect={() => Actions.checkboxToolKey()} text='checkbox' /> */}
+      <MenuOption onSelect={() => Actions.mLabKey()} text='mLab' />
+      <MenuOption onSelect={() => Actions.dashBoardHraKey()} text='dashBoardHra' />
+      <MenuOption onSelect={() => Actions.pedometerKey()} text='Pedometer' />
+      <MenuOption onSelect={() => Actions.storeBrowserKey()} text='BrowseStore' />
+      <MenuOption onSelect={() => Actions.BarChartHorizontalWithLabelsKey()} text='BarChartHorizontalWithLabels' />
+
+    </MenuOptions>
+  </Menu>
+);
+
+/*
+  Key is the onPress Action.key for navigation
+
+*/
+class NavigatorRoute extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      checkIfIsRegistred: false,
+      globalLanguageSetting: globalLanguageSetting
+    }
+    this.CheckIfKeyInStore = utilities.CheckIfKeyInStore.bind(this)
+    this.getFromStoreAndSetInSate = utilities.getFromStoreAndSetInSate.bind(this)
+  }
+
+  render() {
+    return (
+      <MenuProvider>
+        <Router createReducer={reducerCreate}>
+          <Scene key='root' >
+
+            {/* <Scene key='startUpKey' component={startUp} title='startUp' /> */}
+            <Scene key='homeKey' component={HomePageScreen} title='Start' 
+              renderLeftButton={NavigatorMenu} 
+              // onEnter={this.onEnterHome} 
+              />
+            <Scene key='userLanguageKey' component={userLanguage} title='set language'/>
+            <Scene key='registerKey' component={register} title='Registratie'/> 
+            <Scene key='registeredKey' component={registered} title='Registered'/>
+            <Scene key='hraQuestionsKey' component={hraQuestions} title='HRA'/>
+            {/* <Scene key='testStoreKey' component={testStore} title='Store test'/> */}
+            <Scene key='dashBoardVarsKey' component={dashBoardVars} title='dashBoardPrep'/>
+            <Scene key='dashBoardKey' component={dashboard} title='dashBoard'/>
+
+            {/* <Scene key='checkboxToolKey' component={checkBoxText} title='checkboxTool'/> */}
+            <Scene key='mLabKey' component={mLab} title='mLab'/>
+            <Scene key='dashBoardHraKey' component={dashBoardHra} title='dashBoardHra'/>
+            <Scene key='pedometerKey' component={pedometer} title='Pedometer'/>
+            <Scene key='storeBrowserKey' component={storeBrowser} title='BrowseStore' back onBack={refreshOnBack} />
+            <Scene key='BarChartHorizontalWithLabelsKey' component={BarChartHorizontalWithLabels} title='BarChart'/>
+            <Scene key='StepsDashBoardKey' component={StepsDashBoard} title='StepsDashBoard'/>
+
+            
+          </Scene>
+        </Router>
+      </MenuProvider>
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  hamburger: { width:32, height:32, marginLeft:16, marginTop: 6 },
+  navigatormenu: { width: '100%', height:'100%' },
+  menuoptiontext: { marginLeft: 10, fontSize: 18 }
+})
+
+export default NavigatorRoute;

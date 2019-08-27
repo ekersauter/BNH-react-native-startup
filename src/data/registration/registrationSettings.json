@@ -1,0 +1,128 @@
+{ "settings":
+    {
+        "placeholders": {
+            "code": {
+                "nl": "Geef uw registratie code",
+                "en": "Enter your registration code",
+                "fr": "Entrez votre code d'enregistrement"
+            },
+            "birthyear": {
+                "nl": "Geef uw geboorte jaar",
+                "en": "Give birth year",
+                "fr": "Donner l'année de naissance"
+            },
+            "email": {
+                "nl": "Geef uw E-mail adres",
+                "en": "Enter your email address",
+                "fr": "Entrez votre adresse email"
+            },
+            "password": {
+                "nl": "Kies een paswoord (6 tekens)",
+                "en": "Enter your password (6 char)",
+                "fr": "Un mot de passe (6 caractères)"
+            },
+            "codeConfirmed": {
+                "nl": "Registreer met code:",
+                "en": "Register with code:",
+                "fr": "S'inscrire avec code:"
+            },
+            "label1": {
+                "nl": "Check deze code",
+                "en": "Check this code",
+                "fr": "Vérifiez ce code"
+            },
+            "label2": {
+                "nl": "Registreer mij",
+                "en": "Register me",
+                "fr": "Enregistre moi"
+            }
+        },
+            
+        "checkForRegistrationCode": {
+            "confirm": {
+                "nl": {
+                    "alertTitle": "Deze code is geldig!",
+                    "alertMessage": "We kunnen verder",
+                    "alertCancelText": "Cancel",
+                    "alertConfirmText": "Ok, volgende stap!"
+                },
+                "en": {
+                    "alertTitle": "alertTitle",
+                    "alertMessage": "alertMessage",
+                    "alertCancelText": "alertCancelText",
+                    "alertConfirmText": "alertConfirmText"
+                },
+                "fr": {
+                    "alertTitle": "alertTitle FR",
+                    "alertMessage": "alertMessage FR",
+                    "alertCancelText": "alertCancelText FR",
+                    "alertConfirmText": "alertConfirmText FR"
+                }
+            },
+
+            "denial": {
+                "nl": {
+                    "alertTitle": "Er ging iets mis!",
+                    "alertMessage": "Sorry verkeerde code, \nprobeer opnieuw.\n",
+                    "alertCancelText": "Cancel",
+                    "alertConfirmText": "Ok"
+                },
+                "en": {
+                    "alertTitle": "alertTitle",
+                    "alertMessage": "alertMessage",
+                    "alertCancelText": "alertCancelText",
+                    "alertConfirmText": "alertConfirmText"
+                },
+                "fr": {
+                    "alertTitle": "alertTitle FR",
+                    "alertMessage": "alertMessage FR",
+                    "alertCancelText": "alertCancelText FR",
+                    "alertConfirmText": "alertConfirmText FR"
+                }
+            }
+        },
+
+        "checkRegister": {
+            "confirm": {
+                "nl": {
+                    "alertTitle": "Dit ziet er goed uit!",
+                    "alertMessage": "We kunnen verder",
+                    "alertCancelText": "Cancel",
+                    "alertConfirmText": "Ok, registreer mij!"
+                },
+                "en": {
+                    "alertTitle": "alertTitle",
+                    "alertMessage": "alertMessage",
+                    "alertCancelText": "alertCancelText",
+                    "alertConfirmText": "alertConfirmText"
+                },
+                "fr": {
+                    "alertTitle": "alertTitle FR",
+                    "alertMessage": "alertMessage FR",
+                    "alertCancelText": "alertCancelText FR",
+                    "alertConfirmText": "alertConfirmText FR"
+                }
+            },
+            "denial": {
+                "nl": {
+                    "alertTitle": "Er ging iets mis!",
+                    "alertMessage": "Controleer uw input, \nprobeer opnieuw.\n",
+                    "alertCancelText": "Cancel",
+                    "alertConfirmText": "Ok"
+                },
+                "en": {
+                    "alertTitle": "alertTitle",
+                    "alertMessage": "alertMessage",
+                    "alertCancelText": "alertCancelText",
+                    "alertConfirmText": "alertConfirmText"
+                },
+                "fr": {
+                    "alertTitle": "alertTitle FR",
+                    "alertMessage": "alertMessage FR",
+                    "alertCancelText": "alertCancelText FR",
+                    "alertConfirmText": "alertConfirmText FR"
+                }
+            }
+        }
+    }    
+}

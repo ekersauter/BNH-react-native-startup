@@ -1,0 +1,33 @@
+[
+    {
+        "docId": "stepsGoal",
+        "type": "numberInput",
+        "headerImg": "",
+         "headerText": {
+            "nl": "",
+            "en": "",
+            "fr": ""
+        },
+        "text": {
+            "nl": "Pas je streefdoel eventueel aan:",
+            "en": "",
+            "fr": ""
+        },
+        "textStart": {
+            "nl": "Momenteel staan ",
+            "en": "",
+            "fr": ""
+        },
+        "textEnd": {
+            "nl": " stappen als dagdoel ingesteld.",
+            "en": "",
+            "fr": ""
+        },
+        "totalHeight": 40,
+        "minValue": 1000,
+        "maxValue": 50000,
+        "step": 500,
+        "initValue": 4500,
+        "alterType": "plus-minus"
+    }
+]

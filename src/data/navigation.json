@@ -1,0 +1,50 @@
+[
+    {
+    "className": "home",
+    "path": "",
+    "navigationHeaderText": "",
+    "menuItem": true,
+    "label":
+        {
+            "nl": "Start",
+            "fr": "Commencer",
+            "en": "Homepage"
+        }
+    },
+    {
+        "className": "register",
+        "path": "",
+        "navigationHeaderText": "",
+        "menuItem": true,
+        "label":
+            {
+                "nl": "Registreer",
+                "fr": "S'inscrire",
+                "en": "Register"
+            }
+    },
+    {
+        "className": "hraQuestions",
+        "path": "",
+        "navigationHeaderText": "",
+        "menuItem": true,
+        "label":
+            {
+                "nl": "Uw profiel",
+                "fr": "Votre profil",
+                "en": "Your profile"
+            }
+    },
+    {
+        "className": "library",
+        "path": "",
+        "navigationHeaderText": "",
+        "menuItem": true,
+        "label":
+            {
+                "nl": "Bibliotheek",
+                "fr": "Bibliothèque",
+                "en": "Library"
+            }
+    }
+]

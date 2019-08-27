@@ -1,0 +1,136 @@
+[
+    {
+        "docId": "dashboardSliderVar0001",
+        "type": "slider",
+        "headerImg": "",
+        "headerText": {
+            "nl": "dashboardSliderVar0001",
+            "en": "",
+            "fr": ""
+        },        
+        "text": {
+            "nl": "At vero eos et accusamus et iusto odio dignissimos",
+            "en": "",
+            "fr": ""
+        },
+        "labelLeft": {
+            "nl": "Minimaal",
+            "en": "",
+            "fr": ""
+        },
+        "labelRight": {
+            "nl": "Maximaal",
+            "en": "",
+            "fr": ""
+        },
+        "minimumValue": 0,
+        "maximumValue": 10,
+        "sliderValue": 5,
+        "interval": 0,
+        "dashBoardText": {
+            "nl": "Var 1",
+            "en": "",
+            "fr": ""
+        },
+        "dashBoardInputTimesText": {
+            "nl": "Aantal keer\nopgeslagen",
+            "en": "",
+            "fr": ""
+        },
+        "buttonVisible": "false",
+        "nextButtonLabel": {
+            "nl": "",
+            "en": "",
+            "fr": ""
+        }    },
+    {
+        "docId": "dashboardSliderVar0002",
+        "type": "slider",
+        "headerImg": "",
+        "headerText": {
+            "nl": "dashboardSliderVar0002",
+            "en": "",
+            "fr": ""
+        },        
+        "text": {
+            "nl": "At vero eos et accusamus et ",
+            "en": "",
+            "fr": ""
+        },
+        "labelLeft": {
+            "nl": "Minimaal",
+            "en": "",
+            "fr": ""
+        },
+        "labelRight": {
+            "nl": "Maximaal",
+            "en": "",
+            "fr": ""
+        },
+        "minimumValue": 0,
+        "maximumValue": 10,
+        "sliderValue": 5,
+        "interval": 0,
+        "dashBoardText": {
+            "nl": "Var 2",
+            "en": "",
+            "fr": ""
+        },
+        "dashBoardInputTimesText": {
+            "nl": "Aantal keer\nopgeslagen",
+            "en": "",
+            "fr": ""
+        },
+        "buttonVisible": "false",
+        "nextButtonLabel": {
+            "nl": "",
+            "en": "",
+            "fr": ""
+        }    },
+    {
+        "docId": "dashboardSliderVar0003",
+        "type": "slider",
+        "headerImg": "",
+        "headerText": {
+            "nl": "dashboardSliderVar0003",
+            "en": "",
+            "fr": ""
+        },        
+        "text": {
+            "nl": "At vero eos et accusamus et iusto odio dignissimos ducimus",
+            "en": "",
+            "fr": ""
+        },
+        "labelLeft": {
+            "nl": "Minimaal",
+            "en": "",
+            "fr": ""
+        },
+        "labelRight": {
+            "nl": "Maximaal",
+            "en": "",
+            "fr": ""
+        },
+        "minimumValue": 0,
+        "maximumValue": 10,
+        "sliderValue": 5,
+        "interval": 0,
+        "dashBoardText": {
+            "nl": "Var 3",
+            "en": "",
+            "fr": ""
+        },
+        "dashBoardInputTimesText": {
+            "nl": "Aantal keer\nopgeslagen",
+            "en": "",
+            "fr": ""
+        },
+        "buttonVisible": "true",
+        "nextButtonLabel": {
+            "nl": "Bekijk de resultaten",
+            "en": "",
+            "fr": ""
+        }
+
+    }
+]

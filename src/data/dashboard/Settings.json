@@ -1,0 +1,43 @@
+{ "settings":
+    {
+        "intro":{
+            "headerText": {
+                "nl": "Intro_headerText_NL",
+                "en": "Intro_headerText_EN",
+                "fr": "Intro_headerText_FR"
+            },
+            "text": {
+                "nl": "Intro_Text_NL",
+                "en": "Intro_Text_EN",
+                "fr": "Intro_Text_FR"
+            }
+        },
+        "outro":{
+            "headerText": {
+                "nl": "Outro_headerText_NL",
+                "en": "Outro_headerText_EN",
+                "fr": "Outro_headerText_FR"
+            },
+            "text": {
+                "nl": "Outro_Text_NL",
+                "en": "Outro_Text_EN",
+                "fr": "Outro_Text_FR"
+            }
+        },
+        "startButtonLabel":{
+            "nl": "label_NL",
+            "en": "Label_EN",
+            "fr": "label_FR"
+        },
+        "nextButtonLabel":{
+            "nl": "label_NL",
+            "en": "Label_EN",
+            "fr": "label_FR"
+        },
+        "backButtonLabel":{
+            "nl": "label_NL",
+            "en": "Label_EN",
+            "fr": "label_FR"
+        }
+    }
+}
